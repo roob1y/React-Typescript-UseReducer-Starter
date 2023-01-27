@@ -1,0 +1,11 @@
+{
+  "emmet.preferences": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "eslint.codeActionsOnSave.rules": null,
+  "reactSnippets.settings.prettierEnabled": true,
+  "eslint.rules.customizations": [
+  
+  ]
+}
