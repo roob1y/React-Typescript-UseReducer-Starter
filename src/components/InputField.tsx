@@ -2,12 +2,12 @@ import React, { useRef } from "react";
 import "./styles.css";
 
 interface Props {
-  toDo: string;
-  setToDo: React.Dispatch<React.SetStateAction<string>>;
+  todo: string;
+  setTodo: React.Dispatch<React.SetStateAction<string>>;
   handleAdd: (e: React.SyntheticEvent) => void;
 }
 
-const InputField: React.FC<Props> = ({ toDo, setToDo, handleAdd }) => {
+const InputField: React.FC<Props> = ({ todo, setTodo, handleAdd }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   return (
     <form
@@ -21,8 +21,8 @@ const InputField: React.FC<Props> = ({ toDo, setToDo, handleAdd }) => {
       <input
         ref={inputRef}
         type="input"
-        value={toDo}
-        onChange={(e) => setToDo(e.target.value)}
+        value={todo}
+        onChange={(e) => setTodo(e.target.value)}
         placeholder="Enter Your Task"
         className="input__box"
       />
