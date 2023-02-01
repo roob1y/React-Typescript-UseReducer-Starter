@@ -12,6 +12,7 @@ const App: React.FC = () => {
 
   const handleAdd = (e: React.FormEvent) => {
     e.preventDefault();
+    if (todo === "") return;
     dispatch({ type: "add", payload: todo });
     setTodo("");
   };
