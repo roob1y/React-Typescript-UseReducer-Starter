@@ -9,6 +9,8 @@ export type Actions =
   | { type: "remove"; payload: number }
   | { type: "done"; payload: number }
   | { type: "edit"; payload: { id: number; todo: string } }
+  | { type: "drag"; payload: Todo[] }
+
 
 export const todoReducer = (state: Todo[], action: Actions) => {
   switch (action.type) {
@@ -28,6 +30,8 @@ export const todoReducer = (state: Todo[], action: Actions) => {
       return state.map((toDo) =>
         toDo.id === id ? { ...toDo, todo: updatedTodo } : toDo
       );
+      case "drag":
+      return action.payload
     default:
       return state;
   }

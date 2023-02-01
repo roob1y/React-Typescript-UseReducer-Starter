@@ -9,6 +9,7 @@ type Props = {
   todo: Todo;
   dispatch: (value: Actions) => void;
   index: number;
+  isCompleted: boolean;
 };
 
 const ToDoCard: React.FC<Props> = ({ todo, dispatch, index }) => {
@@ -36,14 +37,14 @@ const ToDoCard: React.FC<Props> = ({ todo, dispatch, index }) => {
   }, [edit]);
 
   return (
-    <Draggable draggableId={todo.id.toString()} index={index}>
-      {(provided) => (
+    <Draggable draggableId={todo.id.toString()} index={index} key={todo.id}>
+      {(droppableProvided) => (
         <form
           className="todos__single"
           onSubmit={(e) => handleEdit(e)}
-          {...provided.draggableProps}
-          {...provided.dragHandleProps}
-          ref={provided.innerRef}
+          {...droppableProvided.draggableProps}
+          {...droppableProvided.dragHandleProps}
+          ref={droppableProvided.innerRef}
         >
           {edit ? (
             <input
