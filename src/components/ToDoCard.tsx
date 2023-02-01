@@ -9,7 +9,6 @@ type Props = {
   todo: Todo;
   dispatch: (value: Actions) => void;
   index: number;
-  isCompleted: boolean;
 };
 
 const ToDoCard: React.FC<Props> = ({ todo, dispatch, index }) => {

@@ -14,7 +14,6 @@ const ToDoList: React.FC<Props> = ({
   todos,
   dispatch,
   completedTodos,
-  setCompletedTodos,
 }) => {
   return (
     <div className="container">
@@ -30,7 +29,6 @@ const ToDoList: React.FC<Props> = ({
                 <ToDoCard
                   key={todo.id}
                   todo={todo}
-                  isCompleted={false}
                   dispatch={dispatch}
                   index={index}
                 />
@@ -52,7 +50,6 @@ const ToDoList: React.FC<Props> = ({
                 <ToDoCard
                   key={todo.id}
                   todo={todo}
-                  isCompleted={true}
                   dispatch={dispatch}
                   index={index}
                 />
